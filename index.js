@@ -161,8 +161,16 @@ function processContains(item, list = [], callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list = [], callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  const obj = {}
+  list.forEach(item => {
+    if (!obj[item]) obj[item] = item;
+  })
+
+  const uniqueValuesArray = Object.values(obj);
+  return callback(uniqueValuesArray)
+
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -183,8 +191,9 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners = []) {
   /* CODE HERE */
+  return runners.map(({first_name, last_name}) => `${last_name}, ${first_name}`)
 }
 
 /**
