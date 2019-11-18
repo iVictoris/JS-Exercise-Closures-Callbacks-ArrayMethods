@@ -193,7 +193,9 @@ function processDuplicateFree(list = [], callback) {
 */
 function getFullNames(runners = []) {
   /* CODE HERE */
-  return runners.map(({first_name, last_name}) => `${last_name}, ${first_name}`)
+  const names = []
+  runners.forEach(({first_name, last_name}) => names.push(`${last_name}, ${first_name}`))
+  return names;
 }
 
 /**
@@ -226,8 +228,9 @@ function firstNamesAllCaps(runners = []) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
+
 }
 
 /**
